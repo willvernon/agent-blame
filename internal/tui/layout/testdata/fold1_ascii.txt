@@ -1,0 +1,5 @@
+   agent-blame  ~/src/app  main
+   @            main    <sha>   Merge pull request #41 from acme/session-expiry
+   +-#        > pr      #41 session-expiry                                     merged  10:30
+> >+-#----    > pr      rate-limit                                               open  14:01
+   j/k move  l/h open/close  1 2 3 fold  o diff  q quit                                 3/3

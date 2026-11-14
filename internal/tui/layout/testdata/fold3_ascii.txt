@@ -1,0 +1,27 @@
+   agent-blame  ~/src/app  main
+.  @            main    <sha>   Merge pull request #41 from acme/session-expiry
+.  +-#        v pr      #41 session-expiry                                     merged  10:30
+.  | *-\      v prompt  sessions expire too early, fix                1 edit, <sha>    10:30
+.  | | o      > read    src/auth/session.py                                            10:30
+.  | | +      > edit    src/auth/session.py                                     +1 -1  10:31
+.  | | >      > run     git commit -am 'use utc for session ttl'                       10:31
+.  | =-/        commit  <sha>   use utc for session ttl                                10:31
+.  =-/          merge   <sha>   Merge pull request #41 from acme/session-expiry        11:02
+> >+-#----|   v pr      rate-limit                                               open  14:01
+~  : *-\  |   v prompt  add rate limiting to /login                  3 edits, <sha>    14:01
+~  : | o  |   > read    src/routes/auth.py                                             14:01
+~  : | +  |   > edit    src/middleware/rate_limit.py                           +48 -0  14:01
+~  : | +  |   > edit    src/routes/auth.py                                      +6 -1  14:02
+~  : | +  |   > edit    config/settings.py                                      +3 -0  14:02
+~  : | >  |   > run     git add -A && git commit -m 'add login rate limiter'           14:02
+~  : =-/  |     commit  <sha>   add login rate limiter                                 14:02
+~  : *-\  |   v prompt  tests are failing, fix it                    2 edits, <sha>    14:06
+~  : | >  |   > run     pytest -q                                              failed  14:06
+~  : | +  |   > edit    src/middleware/rate_limit.py                            +5 -2  14:07
+~  : | +  |   > edit    tests/test_auth.py                                     +22 -4  14:07
+~  : | >  |   > run     pytest -q                                              passed  14:08
+~  : =-/  |     commit  <sha>   reset limiter state in tests                           14:08
+~  : *-\  |   v prompt  make the limit configurable per route    2 edits, uncommitted  14:15
+~  :   +  |   > edit    config/settings.py                                    +9 -3 *  14:15
+~  :   +  |   > edit    src/routes/auth.py                                      +2 -2  14:15
+   j/k move  l/h open/close  1 2 3 fold  o diff  q quit                         in pr  9/25

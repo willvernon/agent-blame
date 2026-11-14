@@ -1,0 +1,24 @@
+   agent-blame  ~/src/app  main
+.  ◎            main    <sha>   Merge pull request #41 from acme/session-expiry
+.  ├─⬢        ▾ pr      #41 session-expiry                                               merged  10:30
+.  │ ◆        ▸ prompt  sessions expire too early, fix                          1 edit, <sha>    10:30
+.  ■─╯          merge   <sha>   Merge pull request #41 from acme/session-expiry                  11:02
+.  ├─⬢    │   ▾ pr      rate-limit                                                         open  14:01
+.  ┆ ◆    │   ▸ prompt  add rate limiting to /login                            3 edits, <sha>    14:01
+.  ┆ ◆─╮  ││  ▾ prompt  tests are failing, fix it                              2 edits, <sha>    14:06
+.  ┆ │ ▸  ││  ▸ run     pytest -q                                                        failed  14:06
+> ▌┆ │ ●──│││ ▾ edit    src/middleware/rate_limit.py                                      +5 -2  14:07
+~  ┆ │ │  │││   change  added 5 lines, removed 2
+~  ┆ │ │  │││   why     Tests need a clean limiter per case.
+~  ┆ │ │  │││   diff    @@ -1,1 +1,1 @@
+~  ┆ │ │  │││           -old
+~  ┆ │ │  │││           +new
+~  ┆ │ │  │││   commit  <sha>    inferred: first later commit that touches this file
+~  ┆ │ │  │││   open    o this change   O whole file
+.  ┆ │ ●  ││  ▸ edit    tests/test_auth.py                                               +22 -4  14:07
+.  ┆ │ ▸  ││  ▸ run     pytest -q                                                        passed  14:08
+.  ┆ ■─╯  ││    commit  <sha>   reset limiter state in tests                                     14:08
+.  ┆ ◆─╮  │   ▾ prompt  make the limit configurable per route              2 edits, uncommitted  14:15
+.  ┆   ●  │   ▸ edit    config/settings.py                                              +9 -3 *  14:15
+.  ┆   ●  │   ▸ edit    src/routes/auth.py                                                +2 -2  14:15
+   j/k move  l/h open/close  1 2 3 fold  o diff  q quit                                 in edit  9/15
