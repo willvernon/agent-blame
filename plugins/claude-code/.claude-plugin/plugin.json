@@ -1,0 +1,5 @@
+{
+  "name": "agent-blame",
+  "version": "0.1.0",
+  "description": "Records prompts, edits, runs and HEAD for the agent-blame tree. Needs the agent-blame binary on PATH. Only records repositories where agent-blame has been opened."
+}

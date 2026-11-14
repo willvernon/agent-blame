@@ -1,0 +1,15 @@
+# build output
+/bin/
+/dist/
+*.test
+*.out
+
+# local fuzzing corpus written by go test -fuzz
+**/testdata/fuzz/*/
+!**/testdata/fuzz/.keep
+
+# macOS
+.DS_Store
+
+# screenshots pasted while designing
+docs/Pasted *.png

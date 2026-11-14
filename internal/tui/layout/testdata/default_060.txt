@@ -1,0 +1,12 @@
+   agent-blame  ~/src/app  main
+.  ◎            main    <sha>   Merge pull request #41 from...
+.  ├─⬢        ▾ pr      #41 session-expiry              merged
+.  │ ◆        ▸ prompt  sessions expire to...  1 edit, <sha>  
+.  ■─╯          merge   <sha>   Merge pull request #41 from...
+.  ├─⬢    │   ▾ pr      rate-limit                        open
+.  ┆ ◆    │   ▸ prompt  add rate limiting...  3 edits, <sha>  
+.  ┆ ◆    │   ▸ prompt  tests are failing...  2 edits, <sha>  
+~  ┆ ◆─╮  ││  ▾ prompt  make the limi...  2 edits, uncommitted
+~  ┆   ●  ││  ▸ edit    config/settings.py             +9 -3 *
+> ▌┆   ●──││  ▸ edit    src/routes/auth.py               +2 -2
+   j/k move  l/h open/close  1 2 3 fold  ... in prompt  10/10
