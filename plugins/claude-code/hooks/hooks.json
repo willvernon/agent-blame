@@ -1,0 +1,28 @@
+{
+  "description": "Record agent activity for agent-blame. Runs in the background and never blocks the session.",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          { "type": "command", "command": "agent-blame hook claude-code", "async": true, "timeout": 10 }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Read|Edit|Write|MultiEdit|NotebookEdit|Bash",
+        "hooks": [
+          { "type": "command", "command": "agent-blame hook claude-code", "async": true, "timeout": 10 }
+        ]
+      }
+    ],
+    "PostToolUseFailure": [
+      {
+        "matcher": "Edit|Write|MultiEdit|NotebookEdit|Bash",
+        "hooks": [
+          { "type": "command", "command": "agent-blame hook claude-code", "async": true, "timeout": 10 }
+        ]
+      }
+    ]
+  }
+}
