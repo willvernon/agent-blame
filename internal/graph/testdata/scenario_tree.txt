@@ -1,0 +1,25 @@
+main lane0 main
+  pr lane1 #41 session-expiry [merged] @30m20s
+    prompt lane1 sessions expire too early, fix @30m20s
+      read lane2 src/auth/session.py @30m31s
+      edit lane2 src/auth/session.py [exact] @31m2s
+      run lane2 git commit -am 'use utc for session ttl' @31m4s
+      commit lane1 use utc for session ttl @31m5s
+    merge lane0 Merge pull request #41 from acme/session-expiry @1h2m40s
+  pr lane1 rate-limit [open] @4h1m2s
+    prompt lane1 add rate limiting to /login @4h1m2s
+      read lane2 src/routes/auth.py @4h1m9s
+      edit lane2 src/middleware/rate_limit.py [exact] @4h1m40s
+      edit lane2 src/routes/auth.py [exact] @4h2m3s
+      edit lane2 config/settings.py [exact] @4h2m10s
+      run lane2 git add -A && git commit -m 'add login rate limiter' @4h2m17s
+      commit lane1 add login rate limiter @4h2m18s
+    prompt lane1 tests are failing, fix it @4h6m44s
+      run lane2 pytest -q @4h6m50s
+      edit lane2 src/middleware/rate_limit.py [inferred] @4h7m31s
+      edit lane2 tests/test_auth.py [inferred] @4h7m48s
+      run lane2 pytest -q @4h8m5s
+      commit lane1 reset limiter state in tests @4h8m30s
+    prompt lane1 make the limit configurable per route @4h15m20s
+      edit lane2 config/settings.py [uncommitted] @4h15m41s
+      edit lane2 src/routes/auth.py [orphan] @4h15m58s
